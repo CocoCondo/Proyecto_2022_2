@@ -12,9 +12,10 @@ namespace Proyecto
         Double Costos{get;}
 
         
-        public static void Sort_Score(ServiceManager lista){
+        public static List<JobOffer> Sort_Score(ServiceManager lista){
             List<JobOffer> x=lista.Lista;
-            x.OrderBy(x => x.Trabajador.Score).ToList();
+            List<JobOffer> sorted= x.OrderBy(x => x.Trabajador.Score).ToList();
+            return sorted;
         }
         public static List<JobOffer> Find(ServiceManager lista,string categoria){
             List<JobOffer> w= new List<JobOffer>();
@@ -27,7 +28,7 @@ namespace Proyecto
             return(w);
 
         }
-        
+
         
     }
 }
