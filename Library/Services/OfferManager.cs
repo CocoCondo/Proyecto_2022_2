@@ -26,9 +26,6 @@ namespace Proyecto
                 }
             }
             return(w);
-
         }
-
-        
     }
 }
