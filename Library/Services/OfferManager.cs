@@ -16,11 +16,18 @@ namespace Proyecto
             List<JobOffer> x=lista.Lista;
             x.OrderBy(x => x.Trabajador.Score).ToList();
         }
-        public static void Find(ServiceManager lista,string categoria){
+        public static List<JobOffer> Find(ServiceManager lista,string categoria){
+            List<JobOffer> w= new List<JobOffer>();
             List<JobOffer> x=lista.Lista;
-            for (JobOffer i in x)
+            foreach (JobOffer i in x){
+                if (i.Servicio==categoria){
+                    w.Add(i);
+                }
+            }
+            return(w);
 
         }
+        
         
     }
 }
