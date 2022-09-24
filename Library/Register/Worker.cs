@@ -4,12 +4,12 @@ namespace Proyecto;
 
 public class Worker
 {
-    private string Name {get;}
-    private string Phone {get;}
-    private string Address {get;}
-    private int Score {get;}
+    public string Name {get;}          //Guardo los datos del Worker con un Getter
+    public string Phone {get;}
+    public string Address {get;}
+    public int Score {get;}
 
-    public Worker(string name, string phone, string address)
+    public Worker(string name, string phone, string address) //Constructor de la clase
     {
         this.Name = name;
         this.Phone = phone;

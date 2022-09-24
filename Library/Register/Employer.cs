@@ -4,10 +4,10 @@ namespace Proyecto;
 
 public class Employer
 {
-    private string Name {get;}
-    private string Phone {get;}
-    private string Address {get;}
-    private int Score {get;}
+    public string Name {get;}
+    public string Phone {get;}
+    public string Address {get;}
+    public int Score {get;}
 
     public Employer(string name, string phone, string address)
     {
