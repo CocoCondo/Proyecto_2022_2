@@ -1,23 +1,28 @@
 using System;
-using System.Collections.Generic;
+using System.Collections;
 namespace Proyecto
 
 {
     class ServiceManager{
 
-        public List<JobOffer> Lista {get;}
-        
-        public ServiceManager(){
-            this.Lista= new List<JobOffer>();
+        private IList ServiceList = new List<Service>();
+
+        public void AddService(string name, string description)
+        {
+            this.ServiceList.Add(new Service(name, description));
         }
-        public void Add_Service(JobOffer joboffer){
-            this.Lista.Add(joboffer);
+        public void RemoveService(Service service)
+        {
+            this.ServiceList.Remove(service);
         }
-        public void Remove_Service(JobOffer joboffer){
-            if(this.Lista.Contains(joboffer)){
-            this.Lista.Remove(joboffer);
+        public IList GetServiceList()
+        {
+            IList result = new ArrayList();
+            foreach (Service service in this.ServiceList)
+            {
+                result.Add(service);
             }
-        
+            return result;
         }
     }
 }

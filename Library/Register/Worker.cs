@@ -1,16 +1,21 @@
 using System;
+using System.Collections;
 
 namespace Proyecto;
 
-public class Worker
+public class Worker : IUser
 {
-    public string Name {get;}          //Guardo los datos del Worker con un Getter
+    public string Username {get;}
+    public string Password {get;}
+    public string Name {get;}
     public string Phone {get;}
     public string Address {get;}
     public int Score {get;}
 
-    public Worker(string name, string phone, string address) //Constructor de la clase
+    public Worker(string username, string password, string name, string phone, string address)
     {
+        this.Username = username;
+        this.Password = password;
         this.Name = name;
         this.Phone = phone;
         this.Address = address;

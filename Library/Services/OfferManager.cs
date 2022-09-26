@@ -1,31 +1,43 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+
 namespace Proyecto
 
 {
-    class OfferManager{
+    class OfferManager
+    {
+        private IList OfferList = new List<JobOffer>(); 
 
-        string Servicio {get; set;}
-        Worker Trabajador {get;}
-
-        Double Costos{get;}
-
-        
-        public static List<JobOffer> Sort_Score(ServiceManager lista){
-            List<JobOffer> x=lista.Lista;
-            List<JobOffer> sorted= x.OrderBy(x => x.Trabajador.Score).ToList();
-            return sorted;
+        public void AddOffer(JobOffer jobOffer)
+        {
+            this.OfferList.Add(jobOffer);
         }
-        public static List<JobOffer> Find(ServiceManager lista,string categoria){
-            List<JobOffer> w= new List<JobOffer>();
-            List<JobOffer> x=lista.Lista;
-            foreach (JobOffer i in x){
-                if (i.Servicio==categoria){
-                    w.Add(i);
+        public void RemoveOffer(JobOffer jobOffer)
+        {
+            this.OfferList.Remove(jobOffer);
+        }
+
+        public List<JobOffer> SortByService(Service service)
+        {
+            List<JobOffer> result = new List<JobOffer>();
+            foreach(JobOffer joboffer in OfferList)
+            {
+                if(joboffer.Equals(service))
+                {
+                    result.Add(joboffer);
                 }
             }
-            return(w);
+            return result;
+        }
+
+        public List<JobOffer> SortByScore(Service service)
+        {
+            List<JobOffer> result = new List<JobOffer>();
+            result = SortByService(service);
+            result = result.OrderBy(result => result.Score).ToList();
+            return result;
         }
     }
 }
