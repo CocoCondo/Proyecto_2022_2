@@ -22,7 +22,7 @@ namespace Proyecto
         public List<JobOffer> SortByService(Service service)
         {
             List<JobOffer> result = new List<JobOffer>();
-            foreach(JobOffer joboffer in OfferList)
+            foreach(JobOffer joboffer in this.OfferList)
             {
                 if(joboffer.Equals(service))
                 {
