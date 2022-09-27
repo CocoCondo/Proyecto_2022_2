@@ -7,11 +7,24 @@ public class Admin : IUser
     public string Username {get;}
     public string Password {get;}
 
-    public Admin(string username, string password)
+    private Admin(string username, string password)
     {
         this.Username = username;
         this.Password = password;
     }
+    private static Admin instance;
+    public static Admin Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new Admin("Administrador","123");
+                }
+
+                return instance;
+            }
+        }
     public void CreateService(string name, string description)
     {
 
