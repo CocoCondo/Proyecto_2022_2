@@ -12,19 +12,7 @@ public class Admin : IUser
         this.Username = username;
         this.Password = password;
     }
-    private static Admin instance;
-    public static Admin Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new Admin("Administrador","123");
-                }
-
-                return instance;
-            }
-        }
+    
     public void CreateService(string name, string description)
     {
 

@@ -10,7 +10,7 @@ namespace Proyecto
         public Service Service {get; set;}
         public Worker Worker {get;}
         public Double OfferPrice{get;}
-        public int Score {get;}
+        public int Score {get; set;}
         private DateTime DateTime;
 
         
@@ -21,6 +21,8 @@ namespace Proyecto
             this.OfferPrice = offerprice;
             this.Score = worker.Score; //El score de la JobOffer va a ser igual al score del Worker que oferta
         }
+        
+
         
     }
 }
