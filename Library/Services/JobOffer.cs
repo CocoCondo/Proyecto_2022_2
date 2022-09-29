@@ -10,11 +10,12 @@ namespace Proyecto
         public Service Service {get; set;}
         public Worker Worker {get;}
         public Double OfferPrice{get;}
-        public int Score {get; set;}
+        public double Score {get; set;}
         public int JobOfferID {get;}
         private DateTime DateTime;
+        public bool IsOfferAvailable{get; set;}
 
-        private int ID; // tipo especial ID se puede usar 
+        private static int ID; // tipo especial ID se puede usar 
         
         public JobOffer(Service service, Worker worker, Double offerprice)
         {

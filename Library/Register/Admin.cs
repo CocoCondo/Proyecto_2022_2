@@ -2,26 +2,24 @@ using System;
 
 namespace Proyecto;
 
-public class Admin : IUser
+public class Admin : User
 {
-    public string Username {get;}
-    public string Password {get;}
 
-    private Admin(string username, string password)
+    public Admin(string username, string password, string name) 
+        : base(username, password, name)
     {
-        this.Username = username;
-        this.Password = password;
+        
     }
     
     public void CreateService(string name, string description)
     {
 
     }
-    public void RemoveService(string name, string description)
+    public void RemoveService(string name)
     {
         
     }
-    public void RemoveOffer(string name, string description)
+    public void RemoveOffer(int id)
     {
         
     }

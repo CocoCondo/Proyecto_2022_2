@@ -3,7 +3,7 @@ using System.Collections;
 namespace Proyecto
 
 {
-    public class ServiceManager{
+    public class ServiceManager{ //No se usa en la primer entrega
 
         public IList ServiceList = new List<Service>();
 

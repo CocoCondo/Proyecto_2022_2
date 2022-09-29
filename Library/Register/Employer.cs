@@ -2,22 +2,18 @@ using System;
 
 namespace Proyecto;
 
-public class Employer : IUser
+public class Employer : User
 {
-    public string Username {get;}
-    public string Password {get;}
-    public string Name {get;}
     public string Phone {get;}
     public string Address {get;}
-    public int Score {get;}
-    public bool Avability {get;}
+    public double Score {get; set;}
+    public bool Avability {get; set;}
     public IList<DateTime> AvabilityList = new List<DateTime>();
-    List<JobReview> ReviewList = new List<JobReview>();
+    public IList<JobReview> ReviewList = new List<JobReview>();
+    
     public Employer(string username, string password, string name, string phone, string address)
+        :base(username, password, name)
     {
-        this.Username = username;
-        this.Password = password;
-        this.Name = name;
         this.Phone = phone;
         this.Address = address;
     }
@@ -29,5 +25,13 @@ public class Employer : IUser
             scoreTotal += review.JobScore;
         }
         return scoreTotal/ReviewList.Count;
+    }
+    public void AddAvailabilityList(DateTime datetime)
+    {
+        this.AvabilityList.Add(datetime);
+    }
+    public void AddReviewList(JobReview jobreview)
+    {
+        this.ReviewList.Add(jobreview);
     }
 }

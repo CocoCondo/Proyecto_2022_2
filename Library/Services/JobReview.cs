@@ -7,13 +7,13 @@ namespace Proyecto
     public class JobReview
     {
 
-        public int JobScore {get;}
+        public double JobScore {get; set;}
         
-        public string Review{get;}
-        public DateTime DateTime;
+        public string Review{get; set;}
+        public DateTime DateTime{get;}
 
         
-        public JobReview(int jobScore, string review)
+        public JobReview(double jobScore, string review)
         {
             this.JobScore = jobScore;            
             this.Review = review;

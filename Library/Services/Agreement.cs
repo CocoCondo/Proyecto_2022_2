@@ -6,15 +6,14 @@ namespace Proyecto
 {
     public class Agreement
     {
-
+        public int AgreementID{get;}
+        public DateTime WorkToDoDateTime{get;}
+        public DateTime AcceptedDateTime{get;}
         public JobOffer JobOffer {get;}
         public Worker Worker {get;}
         public Employer Employer {get;}
-        public int EmployerScore {get; set;}
-        public int WorkerScore {get; set;}
-        
-        public DateTime DateTime;
-
+        public JobReview EmployerReview {get; set;}
+        public JobReview WorkerReview {get; set;}
         
         public Agreement(JobOffer jobOffer, Employer Employer)
         {
@@ -23,18 +22,9 @@ namespace Proyecto
             this.Worker = jobOffer.Worker;
            
         }
-
-        public void ReviewWorker(JobReview review)
+        public void AcceptAgreement(bool answer)
         {
-            this.WorkerScore=review.JobScore;
-
-        }
-        public void ReviewEmployer(JobReview review)
-        {
-            this.EmployerScore=review.JobScore;
-
-        }
-
-        
+            
+        }        
     }
 }

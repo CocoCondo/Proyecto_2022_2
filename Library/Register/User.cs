@@ -1,49 +1,16 @@
 using System;
-using System.Collections;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Proyecto;
 
-public class User : IEnumerable
+public abstract class User
 {
-    /* Creo dos GenericList: uno para alojar a los Employer y otro para alojar a los Worker
-        La idea es poder alojar ambos en la misma clase Register*/
-    public UserManager<Employer> employers = new UserManager<Employer>(); //ESTO ES UN ATRIBUTO PARA LA UML
-    public UserManager<Worker> workers = new UserManager<Worker>();
-    public UserManager<Admin> admins = new UserManager<Admin>(); //ATRIBUTO
-
-    public void Add(Employer employer)              //Agrego los objetos Employer a la GenericList de Employers
-        {
-            this.employers.Add(employer);
-        }
-    public void Add(Worker worker)                  //Agrego los objetos Worker a la GenericList de Workers
-        {
-            this.workers.Add(worker);
-        }
-    public void Remove(Employer employer)           //Borro los objetos de sus listas
-        {
-            this.employers.Remove(employer);
-        }
-    public void Remove(Worker worker)
-        {
-            this.workers.Remove(worker);
-        }
-
-    [ExcludeFromCodeCoverage]
-    public IEnumerator GetEnumerator()
-        {
-            ArrayList all = new ArrayList();
-
-            foreach (Employer employer in this.employers)
-            {
-                all.Add(employer);
-            }
-
-            foreach (Worker worker in this.workers)
-            {
-                all.Add(worker);
-            }
-
-            return all.GetEnumerator();
-        }
+    protected User(string username, string password, string name)
+    {
+        this.Username = username;
+        this.Password = password;
+        this.Name = name;
+    }
+    public string Username {get;}
+    public string Password {get;}
+    public string Name {get;}
 }
