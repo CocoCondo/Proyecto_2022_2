@@ -4,7 +4,7 @@ using System.Collections;
 namespace Proyecto
 
 {
-    class Agreement
+    public class Agreement
     {
 
         public JobOffer JobOffer {get;}

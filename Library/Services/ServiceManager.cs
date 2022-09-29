@@ -3,9 +3,9 @@ using System.Collections;
 namespace Proyecto
 
 {
-    class ServiceManager{
+    public class ServiceManager{
 
-        private IList ServiceList = new List<Service>();
+        public IList ServiceList = new List<Service>();
 
         public void AddService(string name, string description)
         {

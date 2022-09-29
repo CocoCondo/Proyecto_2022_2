@@ -6,7 +6,7 @@ using System.Linq;
 namespace Proyecto
 
 {
-    class OfferManager
+    public class OfferManager
     {
         private IList OfferList = new List<JobOffer>(); 
 

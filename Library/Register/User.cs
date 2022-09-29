@@ -8,9 +8,9 @@ public class User : IEnumerable
 {
     /* Creo dos GenericList: uno para alojar a los Employer y otro para alojar a los Worker
         La idea es poder alojar ambos en la misma clase Register*/
-    private UserManager<Employer> employers = new UserManager<Employer>(); //ESTO ES UN ATRIBUTO PARA LA UML
-    private UserManager<Worker> workers = new UserManager<Worker>();
-    private UserManager<Admin> admins = new UserManager<Admin>(); //ATRIBUTO
+    public UserManager<Employer> employers = new UserManager<Employer>(); //ESTO ES UN ATRIBUTO PARA LA UML
+    public UserManager<Worker> workers = new UserManager<Worker>();
+    public UserManager<Admin> admins = new UserManager<Admin>(); //ATRIBUTO
 
     public void Add(Employer employer)              //Agrego los objetos Employer a la GenericList de Employers
         {
