@@ -18,14 +18,14 @@ public class Worker : User
         this.Address = address;
     }
 
-    public void GetScoreAverage()
+    public double GetScoreAverage()
     {
         double scoreTotal = 0;
-        foreach (var review in this.ReviewList)
+        foreach (var review in ReviewList)
         {
             scoreTotal += review.JobScore;
         }
-        this.Score = (int)scoreTotal/ReviewList.Count;
+        return scoreTotal/ReviewList.Count;
     }
     public void AddAvailabilityList(DateTime datetime)
     {

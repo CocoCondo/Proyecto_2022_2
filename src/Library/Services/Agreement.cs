@@ -14,13 +14,15 @@ namespace Proyecto
         public Employer Employer {get;}
         public JobReview EmployerReview {get; set;}
         public JobReview WorkerReview {get; set;}
+        private static int ID; // tipo especial ID se puede usar 
         
         public Agreement(JobOffer jobOffer, Employer Employer)
         {
             this.JobOffer = jobOffer;            
             this.Employer = Employer;
             this.Worker = jobOffer.Worker;
-           
+            ID=ID+1;
+            this.AgreementID = ID;
         }
         public void AcceptAgreement(bool answer)
         {
